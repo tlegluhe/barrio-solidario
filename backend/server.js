@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import router from './router';
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/movies');
+mongoose.connect('mongodb://localhost/barrioSolidarioDB');
 
 // Initialize http server
 const app = express();

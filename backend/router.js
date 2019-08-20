@@ -1,12 +1,11 @@
 import express, { Router } from 'express';
 // Import index action from movies controller
-import { index } from './controllers/movies';
+import { users } from './controllers/users';
 
 // Initialize the router
 const router = Router();
 
-// Handle /movies.json route with index action from movies controller
-router.route('/movies.json')
-  .get(index);
-
+router.route('/users.json')
+  .get(users);
+  
 export default router;
