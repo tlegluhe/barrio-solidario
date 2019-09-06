@@ -4,7 +4,6 @@
   "description": "project of help between neighbors",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
     "start": "nodemon node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js",
     "populate": "nodemon node_modules/babel-cli/bin/babel-node.js populate.js"

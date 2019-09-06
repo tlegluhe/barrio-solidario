@@ -6,18 +6,17 @@ export default class HelloWorldApp extends Component {
 
 	constructor(props) {
 		super(props);
-		console.log("yaha")
 		this.state = { isLoading: true }
 	}
 
 	getMoviesFromApiAsync() {
-		return fetch('https://facebook.github.io/react-native/movies.json')
+		return fetch('http://192.168.0.15:3000/v1/users.json')
 			.then((response) => response.json())
 			.then((responseJson) => {
-				console.log("received shit from backend ", responseJson)
+				console.log("received from backend ", responseJson)
 				this.setState({
 					isLoading: false,
-					movies: responseJson.movies,
+					users: responseJson.users,
 				}, function () {
 
 				});
@@ -41,10 +40,10 @@ export default class HelloWorldApp extends Component {
 		}
 		return (
 			<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-				<Text>Hello, world!!!!!</Text>
+				<Text>Hello, world !!</Text>
 				<FlatList
-					data={this.state.movies}
-					renderItem={({ item }) => <Text>{item.title}, {item.releaseYear}</Text>}
+					data={this.state.users}
+					renderItem={({ item }) => <Text>{item.name}, {item.type}</Text>}
 					keyExtractor={({ id }, index) => id}
 				/>
 			</View>

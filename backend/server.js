@@ -3,8 +3,10 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import router from './router';
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost/barrioSolidarioDB');
+// Connect to MongoDB with a bit of config to remove warnings
+mongoose.set('useCreateIndex', true);
+
+mongoose.connect('mongodb://localhost/barrioSolidarioDB', { useNewUrlParser: true });
 
 // Initialize http server
 const app = express();

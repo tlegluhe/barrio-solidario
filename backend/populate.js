@@ -4,17 +4,21 @@ import User from './models/user';
 const users = [
 	{
 		name: 'Thomas',
-		type: 'students',
+		type: 'student',
 	},
 	{
-		name: 'Jose David',
-		type: 'students',
+		name: 'Pablo',
+		type: 'student',
+	},
+	{
+		name: 'Rene',
+		type: 'profesor',
 	},
 
 ];
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/barrioSolidarioDB');
+mongoose.connect('mongodb://localhost/barrioSolidarioDB', { useNewUrlParser: true });
 
 // Go through each user
 users.map(data => {
