@@ -40,12 +40,12 @@ export default class HelloWorldApp extends Component {
 		}
 		return (
 			<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-				<Text>Hello, world :) jfhcgc!! {API_URL}</Text>
+				<Text>Hello, world :)</Text>
 				
 				<FlatList
 					data={this.state.users}
 					renderItem={({ item }) => <Text>{item.name}, {item.type}</Text>}
-					keyExtractor={({ id }, index) => id}
+					keyExtractor={(item , index) => index.toString()}
 				/>
 			</View>
 		);
