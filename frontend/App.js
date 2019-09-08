@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, ActivityIndicator, Text, View  } from 'react-native';
-
+import { API_URL } from 'react-native-dotenv'
 
 export default class HelloWorldApp extends Component {
 
@@ -10,7 +10,7 @@ export default class HelloWorldApp extends Component {
 	}
 
 	getMoviesFromApiAsync() {
-		return fetch('http://192.168.0.15:3000/v1/users.json')
+		return fetch(API_URL + '/users.json')
 			.then((response) => response.json())
 			.then((responseJson) => {
 				console.log("received from backend ", responseJson)
@@ -40,7 +40,8 @@ export default class HelloWorldApp extends Component {
 		}
 		return (
 			<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-				<Text>Hello, world !!</Text>
+				<Text>Hello, world :) jfhcgc!! {API_URL}</Text>
+				
 				<FlatList
 					data={this.state.users}
 					renderItem={({ item }) => <Text>{item.name}, {item.type}</Text>}
